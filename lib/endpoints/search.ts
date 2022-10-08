@@ -9,7 +9,7 @@ import { apiKey, bloxlinkBaseUrl } from '../index';
  * @returns Bloxlink API data
  */
 const SearchDiscordToRoblox = async(userid:string, guildId?:string) => {
-    if(!userid) { throw new Error("[Bloxlink.js] Invalid userid") };
+    if(!userid) { throw new Error("[Bloxlink-sdk] Invalid userid") };
     let url = guildId ? `${bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${bloxlinkBaseUrl}developer/discord/${userid}`
 
     console.log(url)
@@ -22,7 +22,7 @@ const SearchDiscordToRoblox = async(userid:string, guildId?:string) => {
         }
     })
 
-    if(res.status == 429) { throw new Error("[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.") }
+    if(res.status == 429) { throw new Error("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.") }
 
     return res.data
 }
@@ -44,7 +44,7 @@ const SearchRobloxToDiscord = async(userid:string, guildId?:string) => {
         }
     });
 
-    if(res.status == 429) { throw new Error("[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.") }
+    if(res.status == 429) { throw new Error("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.") }
 
     return res.data
 }

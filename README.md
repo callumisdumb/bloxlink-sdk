@@ -1,15 +1,15 @@
 # Bloxlink API wrapper 🧬
 
-Bloxlink.js is a simple, easy to use API wrapper for Bloxlinks API using Node.js. Anyone who can use code should be fairly comfortable with this.
+Bloxlink-sdk is a simple, easy to use API wrapper for Bloxlinks API using Node.js. Anyone who can use code should be fairly comfortable with this.
 
 ## Working examples
 In order to use this API, you will need an API token from Bloxlink. You'll need to do this [here](https://blox.link/dashboard/developers)
 
-All code in Bloxlink.js works asynchronously.
+All code in Bloxlink-sdk works asynchronously.
 
 > Code
 ```js
-const bloxlink = require('bloxlink.js')
+const bloxlink = require('bloxlink-sdk')
 
 bloxlink.initialise("YOUR_API_KEY_HERE")
 
@@ -31,7 +31,7 @@ This example will get the Roblox information from the user ID `47416968728713625
 
 In the event you're being ratelimited, you should receive an error in the console
 ```
-[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.
+[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.
 ```
 
 ## Versioning Guarantee
