@@ -4,7 +4,8 @@
   "description": "An unofficial wrapper for the Bloxlink API using Node.js",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "tsc && npm publish"
   },
   "keywords": [
     "bloxlink"

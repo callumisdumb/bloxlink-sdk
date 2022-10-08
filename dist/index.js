@@ -17,7 +17,7 @@ let robloxBaseUrl = "https://api.roblox.com/";
  */
 const initialise = (key) => {
     if (!key) {
-        throw new Error("[Bloxlink.js] The key you entered is undefined or invalid");
+        throw new Error("[Bloxlink-sdk] The key you entered is undefined or invalid");
     }
     ;
     exports.apiKey = apiKey = key;

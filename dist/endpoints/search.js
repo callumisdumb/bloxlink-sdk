@@ -23,11 +23,10 @@ const index_1 = require("../index");
  */
 const SearchDiscordToRoblox = (userid, guildId) => __awaiter(void 0, void 0, void 0, function* () {
     if (!userid) {
-        throw new Error("[Bloxlink.js] Invalid userid");
+        throw new Error("[Bloxlink-sdk] Invalid userid");
     }
     ;
     let url = guildId ? `${index_1.bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/discord/${userid}`;
-    console.log(url);
     const res = yield (0, axios_1.default)({
         method: 'get',
         url: url,
@@ -36,7 +35,7 @@ const SearchDiscordToRoblox = (userid, guildId) => __awaiter(void 0, void 0, voi
         }
     });
     if (res.status == 429) {
-        throw new Error("[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.");
+        throw new Error("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
     }
     return res.data;
 });
@@ -60,7 +59,7 @@ const SearchRobloxToDiscord = (userid, guildId) => __awaiter(void 0, void 0, voi
         }
     });
     if (res.status == 429) {
-        throw new Error("[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.");
+        throw new Error("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
     }
     return res.data;
 });

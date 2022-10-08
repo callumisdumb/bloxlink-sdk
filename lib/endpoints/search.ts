@@ -12,8 +12,6 @@ const SearchDiscordToRoblox = async(userid:string, guildId?:string) => {
     if(!userid) { throw new Error("[Bloxlink-sdk] Invalid userid") };
     let url = guildId ? `${bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${bloxlinkBaseUrl}developer/discord/${userid}`
 
-    console.log(url)
-
     const res = await axios({
         method: 'get',
         url: url,

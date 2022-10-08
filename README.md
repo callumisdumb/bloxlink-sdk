@@ -9,11 +9,11 @@ All code in Bloxlink-sdk works asynchronously.
 
 > Code
 ```js
-const bloxlink = require('bloxlink-sdk')
-
-bloxlink.initialise("YOUR_API_KEY_HERE")
-
 (async () => {
+  const bloxlink = require('bloxlink-sdk')
+  
+  bloxlink.initialise("1d0cbd31-db14-4b7a-a78e-91c155160c3b")
+
   console.log(
     await bloxlink.SearchDiscordToRoblox("474169687287136256", "372036754078826496")
   );
