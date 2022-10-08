@@ -26,7 +26,7 @@ const SearchDiscordToRoblox = (userid, guildId) => __awaiter(void 0, void 0, voi
         throw new Error("[Bloxlink.js] Invalid userid");
     }
     ;
-    let url = guildId ? `${index_1.baseUrl}developer/discord/${userid}?guildId=${guildId}` : `${index_1.baseUrl}developer/discord/${userid}`;
+    let url = guildId ? `${index_1.bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/discord/${userid}`;
     console.log(url);
     const res = yield (0, axios_1.default)({
         method: 'get',
@@ -46,12 +46,12 @@ exports.SearchDiscordToRoblox = SearchDiscordToRoblox;
  * @param userid
  * @returns Bloxlink API data
  */
-const SearchRobloxToDiscord = (userid) => __awaiter(void 0, void 0, void 0, function* () {
+const SearchRobloxToDiscord = (userid, guildId) => __awaiter(void 0, void 0, void 0, function* () {
     if (!userid) {
         throw new Error("[Bloxlink.js] Invalid userid");
     }
     ;
-    let url = `https://v3.blox.link/developer/roblox/${userid}`;
+    let url = guildId ? `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}`;
     const res = yield (0, axios_1.default)({
         method: 'get',
         url: url,
@@ -59,6 +59,9 @@ const SearchRobloxToDiscord = (userid) => __awaiter(void 0, void 0, void 0, func
             "api-key": index_1.apiKey
         }
     });
+    if (res.status == 429) {
+        throw new Error("[Bloxlink.js] You're currently being ratelimited by the Bloxlink API.");
+    }
     return res.data;
 });
 exports.SearchRobloxToDiscord = SearchRobloxToDiscord;
