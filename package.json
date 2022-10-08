@@ -1,6 +1,6 @@
 {
   "name": "bloxlink-sdk",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "An unofficial wrapper for the Bloxlink API using Node.js",
   "main": "dist/index.js",
   "scripts": {
