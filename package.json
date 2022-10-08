@@ -1,10 +1,10 @@
 {
-  "name": "bloxlink-node-wrapper",
+  "name": "bloxlink.js",
   "version": "3.0.0",
   "description": "An unofficial wrapper for the Bloxlink api using Node.js",
   "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [
     "bloxlink"
