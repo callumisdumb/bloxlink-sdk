@@ -1,6 +1,17 @@
 # Bloxlink API wrapper 🧬
+[![CodeFactor](https://www.codefactor.io/repository/github/callumisdumb/bloxlink-sdk/badge)](https://www.codefactor.io/repository/github/callumisdumb/bloxlink-sdk)
+![Contributors](https://shields.io/github/contributors/callumisdumb/bloxlink-sdk)
+![License](https://shields.io/github/license/callumisdumb/bloxlink-sdk)
+![Language](https://shields.io/github/languages/top/callumisdumb/bloxlink-sdk)
 
 Bloxlink-sdk is a simple, easy to use API wrapper for Bloxlinks API using Node.js. Anyone who can use code should be fairly comfortable with this.
+
+## Installation
+Installing the package is done through [npm](https://npmjs.com/). This is bundled in the node.js installation.
+
+```
+npm i bloxlink-sdk
+```
 
 ## Working examples
 In order to use this API, you will need an API token from Bloxlink. You'll need to do this [here](https://blox.link/dashboard/developers)
@@ -12,14 +23,14 @@ All code in Bloxlink-sdk works asynchronously.
 (async () => {
   const bloxlink = require('bloxlink-sdk')
   
-  bloxlink.initialise("1d0cbd31-db14-4b7a-a78e-91c155160c3b")
+  bloxlink.initialise("YOUR_API_KEY_HERE")
 
   console.log(
-    await bloxlink.SearchDiscordToRoblox("474169687287136256", "372036754078826496")
+    await bloxlink.SearchDiscordToRoblox("199858283476025346", "372036754078826496")
   );
 })();
 ```
-This example will get the Roblox information from the user ID `474169687287136256` in the guild `372036754078826496`.
+This example will get the Roblox information from the user ID `199858283476025346` in the guild `372036754078826496`.
 
 > Response (application/json)
 ```
@@ -29,7 +40,27 @@ This example will get the Roblox information from the user ID `47416968728713625
 }
 ```
 
-In the event you're being ratelimited, you should receive an error in the console
+> **Warning**: Some endpoints on the Bloxlink v3 API have privileged access to a small group of people for use, therefore they cannot be used by the general public.
+> Despite these endpoints being privileged access, Bloxlink-sdk has a working function for it.
+
+> Code
+```js
+(async () => {
+  const bloxlink = require('bloxlink-sdk')
+  
+  bloxlink.initialise("YOUR_API_KEY_HERE")
+
+  console.log(
+    await bloxlink.SearchRobloxToDiscord("132537120", "372036754078826496")
+  );
+})();
+```
+
+This example will get the Discord information for the Roblox User ID `132537120` in the guild `372036754078826496`.
+
+## Possible errors/warnings
+
+In the event you're being ratelimited, you should receive a warning in the console
 ```
 [Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.
 ```
