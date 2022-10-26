@@ -25,7 +25,6 @@ const SearchDiscordToRoblox = (userid, guildId) => __awaiter(void 0, void 0, voi
     if (!userid) {
         throw new Error("[Bloxlink-sdk] Invalid userid");
     }
-    ;
     const url = guildId ? `${index_1.bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/discord/${userid}`;
     const res = yield (0, axios_1.default)({
         method: 'get',
@@ -51,7 +50,6 @@ const SearchRobloxToDiscord = (userid, guildId) => __awaiter(void 0, void 0, voi
     if (!userid) {
         throw new Error("[Bloxlink.js] Invalid userid");
     }
-    ;
     const url = guildId ? `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}`;
     const res = yield (0, axios_1.default)({
         method: 'get',
