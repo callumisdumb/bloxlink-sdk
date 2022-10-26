@@ -12,7 +12,7 @@ let robloxBaseUrl = "https://api.roblox.com/";
 /**
  *
  * @param key
- * @param useRoblox
+ * @param type
  * @description Initialise Bloxlink.js
  */
 const initialise = (key) => {
