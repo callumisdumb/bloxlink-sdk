@@ -1,7 +1,7 @@
 import { SearchDiscordToRoblox, SearchRobloxToDiscord } from './endpoints/search'
 
 let apiKey:string;
-const bloxlinkBaseUrl:string = "https://v3.blox.link/"
+const bloxlinkBaseUrl:string = "https://api.blox.link/v4"
 //const robloxBaseUrl:string = "https://api.roblox.com/"
 
 /**

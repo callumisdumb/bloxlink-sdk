@@ -69,7 +69,7 @@ In the event you're being ratelimited, you should receive a warning in the conso
 
 This project utilises the [Semantic Versioning](https://semver.org/) rules. Packages are published on NPM in the MAJOR.MINOR.PATCH
 
-> **Note**: Incrementations of the MAJOR component indicates a new version of the [Bloxlink API](https://blox.link/dashboard/developers) is supported
+> **Note**: Incrementations of the MAJOR component indicates a new version of the [Bloxlink API](https://blox.link/dashboard/developer) is supported
 
 All other incremenations of the semver components follow the [Semantic Versioning Summary](https://semver.org/#summary)
 

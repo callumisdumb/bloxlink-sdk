@@ -16,51 +16,51 @@ exports.SearchRobloxToDiscord = exports.SearchDiscordToRoblox = void 0;
 const axios_1 = __importDefault(require("axios"));
 const index_1 = require("../index");
 /**
- * @description Get users verified Roblox information from Discord ID
+ * @description Get users verified Roblox ID from Discord ID
  * @param userid
  * @param guildId
  * @returns Bloxlink API data
  */
 const SearchDiscordToRoblox = (userid, guildId) => __awaiter(void 0, void 0, void 0, function* () {
     if (!userid) {
-        throw new Error("[Bloxlink-sdk] Invalid userid");
+        throw new Error("[Bloxlink-sdk] Invalid Discord ID");
     }
-    const url = guildId ? `${index_1.bloxlinkBaseUrl}developer/discord/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/discord/${userid}`;
+    const url = guildId ? `${index_1.bloxlinkBaseUrl}/public/guilds/${guildId}/${userid}` : `${index_1.bloxlinkBaseUrl}/public/discord/${userid}`;
     const res = yield (0, axios_1.default)({
         method: 'get',
         url: url,
         headers: {
-            "api-key": index_1.apiKey,
+            "Authorization": index_1.apiKey,
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
         }
     });
     if (res.status == 429) {
-        console.warn("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
+        return console.warn("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
     }
     return res.data;
 });
 exports.SearchDiscordToRoblox = SearchDiscordToRoblox;
 /**
- * @description Get Roblox information from Discord ID. This endpoint has priviledged access.
+ * @description Get Roblox information from Discord ID.
  * @param userid
  * @param guildId
  * @returns Bloxlink API data
  */
-const SearchRobloxToDiscord = (userid, guildId) => __awaiter(void 0, void 0, void 0, function* () {
+const SearchRobloxToDiscord = (userid) => __awaiter(void 0, void 0, void 0, function* () {
     if (!userid) {
         throw new Error("[Bloxlink.js] Invalid userid");
     }
-    const url = guildId ? `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}?guildId=${guildId}` : `${index_1.bloxlinkBaseUrl}developer/roblox/${userid}`;
+    const url = `${index_1.bloxlinkBaseUrl}/public/roblox/${userid}`;
     const res = yield (0, axios_1.default)({
         method: 'get',
         url: url,
         headers: {
-            "api-key": index_1.apiKey,
+            "Authorization": index_1.apiKey,
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
         }
     });
     if (res.status == 429) {
-        console.warn("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
+        return console.warn("[Bloxlink-sdk] You're currently being ratelimited by the Bloxlink API.");
     }
     return res.data;
 });

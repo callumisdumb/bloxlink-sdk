@@ -6,7 +6,7 @@ Object.defineProperty(exports, "SearchDiscordToRoblox", { enumerable: true, get:
 Object.defineProperty(exports, "SearchRobloxToDiscord", { enumerable: true, get: function () { return search_1.SearchRobloxToDiscord; } });
 let apiKey;
 exports.apiKey = apiKey;
-const bloxlinkBaseUrl = "https://v3.blox.link/";
+const bloxlinkBaseUrl = "https://api.blox.link/v4";
 exports.bloxlinkBaseUrl = bloxlinkBaseUrl;
 //const robloxBaseUrl:string = "https://api.roblox.com/"
 /**
